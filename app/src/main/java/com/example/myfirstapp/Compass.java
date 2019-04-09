@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -38,6 +39,7 @@ public class Compass extends AppCompatActivity implements SensorEventListener {
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         compass_img = (ImageView) findViewById(R.id.img_compass);
         txt_compass = (TextView) findViewById(R.id.txt_azimuth);
+        snow_img = (ImageView) findViewById(R.id.img_snow);
 
         start();
     }
@@ -74,10 +76,13 @@ public class Compass extends AppCompatActivity implements SensorEventListener {
             } else {
                 ((Vibrator) getSystemService(VIBRATOR_SERVICE)).vibrate(150);
             }
-            compass_img = (ImageView) findViewById(R.id.img_snow);
-           // snow_img.setImageResource(R.drawable.snowman);
 
+            snow_img.setVisibility(View.VISIBLE);
         }
+        else{
+            snow_img.setVisibility(View.INVISIBLE);
+        }
+
         if (mAzimuth < 350 && mAzimuth > 280)
             where = "NW";
         if (mAzimuth <= 280 && mAzimuth > 260)

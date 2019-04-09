@@ -48,6 +48,10 @@ public class Accelerometer extends AppCompatActivity implements SensorEventListe
             float yVal = event.values[1];
             float zVal = event.values[2];
 
+            float xRgb = xVal*20;
+            float yRgb = yVal*20;
+            float zRgb = zVal*20;
+
             sx = "X Value : <font color = '#800080'> " + xVal + "</font>";
             sy = "Y Value : <font color = '#800080'> " + yVal + "</font>";
             sz = "Z Value : <font color = '#800080'> " + zVal + "</font>";
@@ -57,7 +61,7 @@ public class Accelerometer extends AppCompatActivity implements SensorEventListe
             z.setText(Html.fromHtml(sz));
 
             RelativeLayout r = (RelativeLayout) findViewById (R.id.rl);
-            r.setBackgroundColor(Color.rgb(xVal, yVal, zVal));
+            r.setBackgroundColor(Color.rgb(Math.round(xRgb), Math.round(yRgb), Math.round(zRgb)));
         }
     }
 

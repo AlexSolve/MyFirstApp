@@ -22,13 +22,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txt_azimuth"
-        android:src="@drawable/compass" />
+        android:src="@drawable/compass"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="109dp" />
 
     <ImageView
         android:id="@+id/img_snow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="191dp"
+        android:layout_height="309dp"
         android:layout_below="@+id/txt_azimuth"
-        android:src="@drawable/snowman" />
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/snowman"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
